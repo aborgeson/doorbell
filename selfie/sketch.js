@@ -5,32 +5,33 @@ let timer = 5
 let myFont;
 
 function preload() {
-  myFont = loadFont('SourceSansPro-SemiBold.ttf');
+  // myFont = loadFont('SourceSansPro-SemiBold.ttf');
 }
 
 function setup() {
-  createCanvas(600,580);
+  let myCanvas = createCanvas(350, 400);
+  myCanvas.parent('canvas');
   colorMode(HSB);
   video = createCapture(VIDEO);
   video.position(0,0);
-  video.size(320, 240)
+  video.size(350, 300)
   
   //font
   fill(0,0,100);
-  textFont(myFont);
+  // textFont(myFont);
 }
 
 function draw() {
     background(0,23,100);
      video.show();
          // filter('THRESHOLD');
-         image(video, 0, 0, 640, 480);
+         image(video, 0, 0, 350, 300);
 		video.hide();
   
   selfieTimer();       
   textAlign(CENTER, CENTER);
-  textSize(40);
-  text(timer, width/2, 520);
+  textSize(24);
+  text(timer, width/2, 340);
 }
 
 function selfieTimer() {
@@ -38,7 +39,7 @@ function selfieTimer() {
     timer --;
   }
   if (timer == 0) {
-    text("I visited Arianna's House!", width/2, 520);
+    text("I visited Arianna's House!", width/2, 340);
     save('mySelfie.jpg');
     noLoop();
 		timer.hide();
