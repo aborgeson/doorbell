@@ -39,7 +39,7 @@ function selfieTimer() {
     timer --;
   }
   if (timer == 0) {
-    text("I visited Arianna's House!", width/2, 340);
+    text("I visited Arianna's place!", width/2, 340);
     save('mySelfie.jpg');
     noLoop();
 		timer.hide();
