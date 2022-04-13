@@ -9,12 +9,12 @@ function preload() {
 }
 
 function setup() {
-  let myCanvas = createCanvas(300, 400);
+  let myCanvas = createCanvas(260, 360);
   myCanvas.parent('canvas');
   colorMode(HSB);
   video = createCapture(VIDEO);
   video.position(0,0);
-  video.size(300, 350)
+  video.size(260, 310)
   
   //font
   fill(0,0,100);
@@ -25,13 +25,13 @@ function draw() {
     background(0,23,100);
      video.show();
          // filter('THRESHOLD');
-         image(video, 0, 0, 300, 350);
+         image(video, 0, 0, 280, 310);
 		video.hide();
   
   selfieTimer();       
   textAlign(CENTER, CENTER);
   textSize(24);
-  text(timer, width/2, 380);
+  text(timer, width/2, 335);
 }
 
 function selfieTimer() {
@@ -39,7 +39,7 @@ function selfieTimer() {
     timer --;
   }
   if (timer == 0) {
-    text("I visited Arianna's place!", width/2, 380);
+    text("I visited Arianna's place!", width/2, 335);
     save('mySelfie.jpg');
     noLoop();
 		timer.hide();
